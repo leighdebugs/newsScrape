@@ -10,3 +10,16 @@ body {
     font-family: 'Catamaran', sans-serif;
 };
 
+body .h4 #titleinput #bodyinput {
+    color: #070721;
+}
+
+.enterData {
+    background-color: #b2b2ff;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}

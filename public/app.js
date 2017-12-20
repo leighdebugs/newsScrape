@@ -1,7 +1,7 @@
 // pull and display articles as JSON
 $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
-    var newData = "<p data-id='" + data[i]._id + "''>" + "<a href='" + data[i].link + "'>" + data[i].title + "</a>" + " " + '<input id="saveBtn" type="button" value="Save"/>' + "</p>"
+    var newData = "<p data-id='" + data[i]._id + "''>" + "<a href='" + data[i].link + "'>" + data[i].title + "</a>" + " " + '<input class="enterData" type="button" value="Bookmark"/>' + "</p>"
     $("#articles").append(newData);
 
   }
@@ -11,10 +11,10 @@ $.getJSON("/articles", function(data) {
 // onclick event to empty notes
 $(document).on("click", "p", function() {
   // Empty the notes from the note section
-  $("#notes").empty();
+  // $("#notes").empty();
   // Save the id from the p tag
-
   var thisId = $(this).attr("data-id");
+
 
   // ajax call for article
   $.ajax({
@@ -25,13 +25,13 @@ $(document).on("click", "p", function() {
     .done(function(data) {
       console.log(data);
       // title
-      $("#notes").append("<h2>" + data.title + "</h2>");
+      $("#notes").append("<h4>" + data.title + "</h4>");
       // input area for title
-      $("#notes").append("<input id='titleinput' name='title' >");
+      $("#notes").append("<input id='titleinput' name='title' placeholder='Title'>");
       // note body
-      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#notes").append("</br><textarea id='bodyinput' name='body'></textarea>");
       // submit
-      $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+      $("#notes").append("</br><button class='enterData' data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
       if (data.note) {
         // append title of note into title input
