@@ -1,7 +1,9 @@
 // pull and display articles as JSON
 $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    var newData = "<p data-id='" + data[i]._id + "''>" + "<a href='" + data[i].link + "'>" + data[i].title + "</a>" + " " + '<input id="saveBtn" type="button" value="Save"/>' + "</p>"
+    $("#articles").append(newData);
+
   }
 });
 
@@ -11,6 +13,7 @@ $(document).on("click", "p", function() {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
+
   var thisId = $(this).attr("data-id");
 
   // ajax call for article
@@ -61,7 +64,7 @@ $(document).on("click", "#savenote", function() {
       $("#notes").empty();
     });
 
-  // clear input areas
+  // clear input
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });

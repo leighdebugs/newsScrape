@@ -1,0 +1,12 @@
+.jumbotron {
+    background-image: url('images/header.gif');
+    font-family: 'Leckerli One', cursive;
+    color: #070721;
+    text-align: center;
+
+};
+
+body {
+    font-family: 'Catamaran', sans-serif;
+};
+

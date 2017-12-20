@@ -59,7 +59,7 @@ app.get("/scrape", function(req, res) {
     });
     // indicate that scrape has been completed
     res.send("Scrape Complete");
-    console.log(result)
+
   });
 });
 

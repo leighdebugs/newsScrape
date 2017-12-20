@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>BBC Consolidated</title>
+	<title>Smitten Kitchen Consolidated</title>
 	<!--Bootstrap-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Bangers|Catamaran" rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Catamaran|Leckerli+One" rel="stylesheet">
+
 </head>
 <body>
 
@@ -16,7 +17,7 @@
 
 <!--Jumbotron-->
 <div class="jumbotron">
-  <div class="container-fluid">
+  <div class="container-fluid" id="text-bar">
 	<h1>Smitten Kitchen Consolidated</h1>
 	<h4>an easier way to navigate the Smitten Kitchen recipe collection</h4>
   </div>
@@ -26,16 +27,25 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="/articles">Your Notes</a></li>
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="/scrape">SCRAPE FOR RECIPES!</a></li>
+      <li><a href="/articles">Saved Articles</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container-fluid" id="main-frame">
-	<!--news populates here-->
-	<div id="articles"></div>
-	<div id="notes"></div>
+	<div class="row">
+		<div class="col-sm-7">
+		<!--news populates here-->
+			<div id="articles"></div>
+		</div>
+		<div class="col-sm-5">
+			<!--saved populates here-->
+			<div id="notes"></div>
+		</div>
+			
+	</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
