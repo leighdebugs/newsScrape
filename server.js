@@ -35,10 +35,9 @@ app.get("/scrape", function(req, res) {
   axios.get("http://smittenkitchen.com/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
-    console.log(response.data);
 
     // get and store link/title of articles
-    $("article h1 href").each(function(i, element) {
+    $("article header h1").each(function(i, element) {
       var result = {};
 
       // save text and link as properties of result object
@@ -60,6 +59,7 @@ app.get("/scrape", function(req, res) {
     });
     // indicate that scrape has been completed
     res.send("Scrape Complete");
+    console.log(result)
   });
 });
 
