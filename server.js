@@ -22,8 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 // connect to newsscrape mongodb
+var uri = "mongodb://heroku_mgmqcf44:9atnsipmqior86nui1n7upthfp@ds141406.mlab.com:41406/heroku_mgmqcf44"
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/newsscrape", {
+mongoose.connect(uri), {
   useMongoClient: true
 });
 
